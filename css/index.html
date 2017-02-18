@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            /*background-color: burlywood;*/
+            margin-top:30px;;
+        }
+        .shadow{
+            /*box-shadow: 5px 5px 5px #ccc;*/
+            /*左右偏移，上下偏移，模糊度*/
+            /*box-shadow: 0 0 10px 15px #0CC;*/
+            /*X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色*/
+            box-shadow:-10px 0 10px red, /*左边阴影*/
+            10px 0 10px yellow, /*右边阴影*/
+            0 -10px 10px blue, /*顶部阴影*/
+            0 10px 10px green; /*底边阴影*/
+            /*左（负）右、上（负）下*/
+        }
+        .radius{
+            border-radius: 10px 20px;
+            /*左上、右上、右下、左下*/
+        }
+        .backGd{
+            width: 300px;
+            height: 300px;
+            /*outline:1px solid red;*/
+            /*background: url("../img/img2.jpg") no-repeat;*/
+            /*多张背景图*/
+            background-image: url("img/img1.jpg"),
+            url("img/img2.jpg");
+            background-repeat: no-repeat;
+            background-position: 0 0,
+            100px 0;
+            border:5px solid red;
+            /*相对于某位置定位*/
+            background-origin:content-box;
+            padding-left: 20px;;
+            /*overflow: scroll;*/
+
+        }
+        .rotate{
+            margin-left: 50px;;
+            width: 200px;
+            height: 300px;
+            outline:1px solid red;
+            transform:rotate(30deg);
+            /*上*/
+            /*transform-origin: 50% 0;*/
+            /*右*/
+            /*transform-origin:100% 50% ;*/
+            /*下*/
+            transform-origin:100% 100% ;
+        }
+        .transform div{
+            background-color: #30caca;
+        }
+        @keyframes spin {
+            to { transform: rotate(1turn); }
+        }
+        @keyframes spin-reverse {
+            from { transform: rotate(1turn); }
+        }
+        .avatar {
+            animation: spin 10s infinite linear;
+            transform-origin: 50% 150px;
+        }
+        .avatar > img {
+            animation: spin-reverse 10s infinite linear;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="shadow">阴影</div>
+    <div class="radius">圆角</div>
+    <div class="backGd">
+        dfsfsdfsfsd
+    </div>
+    <!--<div class="rotate">rotate</div>-->
+
+    <div class="transform">
+        <div style="transform:rotate(45deg) rotate(-45deg)"></div>
+    </div>
+
+    <div class="avatar">
+        <img src="img/img1.jpg" alt="" />
+    </div>
+</body>
+</html>
